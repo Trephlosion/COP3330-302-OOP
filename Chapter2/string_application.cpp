@@ -12,14 +12,15 @@
 
 using namespace std;
 
-
+void print_by_name(string name[], string id[], string phone[], int num_clients);
 
 int main()
 {
 
 ifstream InputFile;
 
-string name, id, phone, client_info;
+string name[6]={}, id[6]={}, phone[6]={}, client_info;
+int index = 0;
 
 InputFile.open("agenda_phone.txt");
 
@@ -29,14 +30,19 @@ if(!InputFile)
     exit(1);
 }
 
-getline(InputFile, client_info); // calls the whole line and assigns it to client_info
 
 while(!InputFile.eof()) // identifies if the next line of code is empty or not.
 {
-    printf("\nClient Info: %s", client_info.c_str());// %s printing string
-    getline(InputFile, client_info);
+    InputFile >> id[index];
+    InputFile >> name[index];
+    InputFile >> phone[index];
+    printf("\nClient Info: %s %s %s\n", id[index].c_str(), name[index].c_str(), phone[index].c_str());// %s printing string
+    
+    index++;
 
 }
+index--;
+print_by_name(name, id, phone, index);
 
 InputFile.close();
 cout << "All clients were loaded..." << endl;
@@ -44,3 +50,26 @@ cout << "All clients were loaded..." << endl;
 
 return 0;
 }//main
+
+void print_by_name(string name[], string id[], string phone[], int num_clients)
+{
+    string given_name;
+    bool found = false;
+    cout << "Please write the name of the client: ";
+    cin >> given_name;
+
+    for (int i=0; i < num_clients; i++)
+    {
+        if(given_name == name[i])
+        {
+            found = true;
+            printf("\nThe information of the client: %s %s %s", id[i].c_str(), name[i].c_str(), phone[i].c_str());
+            break;
+        }
+    
+    }
+    if(!found)
+    {
+        cout << given_name <<" not found.." << endl;
+    }
+}//print_by_name
