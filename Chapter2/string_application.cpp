@@ -13,6 +13,8 @@
 using namespace std;
 
 void print_by_name(string name[], string id[], string phone[], int num_clients);
+void print_by_id(string name[], string id[], string phone[], int num_clients);
+void print_by_phone(string name[], string id[], string phone[], int num_clients);
 
 int main()
 {
@@ -43,6 +45,8 @@ while(!InputFile.eof()) // identifies if the next line of code is empty or not.
 }
 index--;
 print_by_name(name, id, phone, index);
+print_by_id(name, id, phone, index);
+print_by_phone(name, id, phone, index);
 
 InputFile.close();
 cout << "All clients were loaded..." << endl;
@@ -73,3 +77,52 @@ void print_by_name(string name[], string id[], string phone[], int num_clients)
         cout << given_name <<" not found.." << endl;
     }
 }//print_by_name
+
+
+void print_by_id(string name[], string id[], string phone[], int num_clients)
+{
+    string given_id;
+    bool found = false;
+    cout << "Please write the ID of the client: ";
+    cin >> given_id;
+
+    for (int i=0; i < num_clients; i++)
+    {
+        if(given_id == id[i])
+        {
+            found = true;
+            printf("\nThe information of the client: %s %s %s", id[i].c_str(), name[i].c_str(), phone[i].c_str());
+            break;
+        }
+    
+    }
+    if(!found)
+    {
+        cout << given_id <<" not found.." << endl;
+    }
+}//print_by_id
+
+
+void print_by_phone(string name[], string id[], string phone[], int num_clients)
+{
+    string given_phone;
+    bool found = false;
+    cout << "Please write the phone number of the client: ";
+    cin >> given_phone;
+
+    for (int i=0; i < num_clients; i++)
+    {
+        if(given_phone == phone[i])
+        {
+            found = true;
+            printf("\nThe information of the client: %s %s %s", id[i].c_str(), name[i].c_str(), phone[i].c_str());
+            break;
+        }
+    
+    }
+    if(!found)
+    {
+        cout << given_phone <<" not found.." << endl;
+    }
+}//print_by_phone
+
