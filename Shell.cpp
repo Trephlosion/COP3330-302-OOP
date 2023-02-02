@@ -1,3 +1,9 @@
+/*
+                                Rodney Whitney III
+                                     COP 3330
+                
+
+*/
 #include <iostream>
 
 
@@ -9,5 +15,5 @@ int main()
 {
 
 
-
+return 0;
 }//main
