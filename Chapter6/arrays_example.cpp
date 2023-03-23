@@ -17,20 +17,20 @@ int main()
 
     string month_day[6][2]= {{"January","15"},{"Febuary","28"},{"April","10"},{"May","22"},{"June","17"},{"July","20"}};
 
-    // for (int j=0; j<NUM_MONTH; j++)
-    // {
-    //     for(int i=0; i<2; i++)
-    //     {
-    //         cout << endl << setw(9) << left << " " << month_day[j][i];
-    //     }
-    //     cout << endl;
-    // }
+    for (int j=0; j<NUM_MONTH; j++)
+    {
+        for(int i=0; i<2; i++)
+        {
+            cout << endl << left << " " << month_day[j][i];
+        }
+        cout << endl;
+    }
 
     for (int j=0; j<NUM_MONTH; j++)
     {
         for(int i=1; i>0; i--)
         {
-            cout << endl << setw(9) << left << " " << month_day[j][i];
+            cout << endl  << left << " " << month_day[j][i];
         }
         cout << endl;
     }
