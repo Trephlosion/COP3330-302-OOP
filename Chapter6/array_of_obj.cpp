@@ -33,7 +33,22 @@ int main()
 
 
 
-    Machine 
+    Machine machines[NUM_MACHINE] = {Machine{"230-09-87", "Tallahasse"}, Machine{"174-89-65", "Orlando"}, Machine{"541-67-09", "Gainsville"}};
+
+    BankAccount bank_account[NUM_MACHINE];
+    bank_account[0].set_BankFullInfo(5456,"Michael-Suarez",3472,76321);
+    bank_account[1].set_BankFullInfo(450,"Carlos-Theran",7654,98761);
+    bank_account[2].set_BankFullInfo(1230,"Rony-McKloain",7654,98761);
+
+    cout<< "Do you want to do any transactions? ";
+    cin >> answer;
+
+    if(answer == "yes")
+    {
+        cout << "\nSelect the city where you are making your trasnaction to. ";
+    }
+
+
 
 
 
