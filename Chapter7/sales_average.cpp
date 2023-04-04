@@ -7,8 +7,8 @@ using namespace std;
 
 int main()
 {
+    
     double *sales = nullptr;
-
     double total = 0.0, average;
     
 
@@ -23,9 +23,20 @@ int main()
 
     for(int index=0; index<num_days; index++)
     {
-        cout << "Day "<< index+1 <<": ";
+        cout << "Day "<< index+1 <<": $";
         cin >> sales[index];
     }
+
+    for(int index=0; index<num_days; index++)
+    {
+        total = total + sales[index];
+    }
+
+    cout<<"\nTotal sales: $" <<total<<endl;
+    cout <<"Average sales: $"<< total/num_days <<endl;
+
+
+
 
 
     return 0;
