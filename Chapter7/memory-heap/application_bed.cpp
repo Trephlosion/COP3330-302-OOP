@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Bed.h"
-
+using namespace std;
 
 Bed::Bed(int size)
 {
