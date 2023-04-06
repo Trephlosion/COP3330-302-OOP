@@ -19,7 +19,7 @@ class Bed
 
     void price();
     void print_info();
-    void setbed( int size);
+    void setbed(int size);
 
 
 
