@@ -50,7 +50,5 @@ int main()
     cout<<endl<<"Student Answers for Exam 1"<<endl;
     Exam1.print_student_answers();
 
-
-
     return 0;
 }//main
